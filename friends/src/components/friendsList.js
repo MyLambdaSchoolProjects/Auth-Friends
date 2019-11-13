@@ -4,7 +4,7 @@ import React from "react";
 import axios from "axios";
 import FriendCard from "./friendsCard";
 
-const axiosWithAuth = () => {
+export const axiosWithAuth = () => {
   return axios.create({
     headers: {
       authorization: sessionStorage.getItem("token")

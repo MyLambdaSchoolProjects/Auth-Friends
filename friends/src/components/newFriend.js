@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import {axiosWithAuth} from './friendsList'
 
 class NewFriend extends React.Component{
     state = {
@@ -22,7 +23,7 @@ class NewFriend extends React.Component{
 
     addFriend = e =>{
         e.preventDefault();
-        axios
+        axiosWithAuth()
             .post("http://localhost:5000/api/friends", this.state.newFriend)
             .then(res => {
                 console.log("post", res);
